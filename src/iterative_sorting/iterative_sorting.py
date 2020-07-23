@@ -1,7 +1,7 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr)):
+    for i in range(0, len(arr)-1):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
@@ -51,6 +51,24 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
     # Your code here
+    if len(arr)==0:
+        return arr
+    
+    if maximum == -1 :
+        maximum = max(arr)
+    
+    counts = [0] * (maximum+1)
 
+    for value in arr:
+        if value < 0 :
+            return "Error : Negative numbers are not allowed"
+        count += 1 
+    
+    j = 0
+    for i in range (0, len(counts)):
+        while counts[i] > 0 :
+            arr[j] = i 
+            j += 1
+            counts[i] -= 1 
 
     return arr
